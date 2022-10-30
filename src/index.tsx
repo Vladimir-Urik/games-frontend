@@ -4,13 +4,16 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {Home} from './pages';
 import './styles/index.css';
+import {RecoilRoot} from 'recoil';
 
 ReactDOM.render(
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>,
+    <RecoilRoot>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </RecoilRoot>,
     document.getElementById('root'),
 );
 
