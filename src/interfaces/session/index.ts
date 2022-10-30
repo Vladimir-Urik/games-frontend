@@ -6,4 +6,5 @@ export interface Session {
     screen: 'SELECT_GAME' | 'SELECT_NEXT_MOVE' | 'JOIN_GAME' | 'CREATE_GAME' | undefined;
     game: Game | undefined;
     party: Party | undefined;
+    loading: boolean;
 }

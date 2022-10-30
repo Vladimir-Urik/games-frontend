@@ -20,12 +20,17 @@ export const SelectNextMoveForm: React.FC = () => {
         });
       }}>Join a game</Button>
       <Button variant={'primary'} onClick={async () => {
-        const party = await createParty(session.nickname, session.game.id);
-
         setSession({
           ...session,
-          screen: 'CREATE_GAME',
-          party: party,
+          loading: true,
+        });
+        createParty(session.nickname, session.game.id).then((party) => {
+          setSession({
+            ...session,
+            screen: 'CREATE_GAME',
+            party: party,
+            loading: false,
+          });
         });
       }}>Create a game</Button>
       <Button variant={'danger'} className="mt-4" onClick={() => {

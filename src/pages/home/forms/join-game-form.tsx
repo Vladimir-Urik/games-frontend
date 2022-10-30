@@ -14,7 +14,7 @@ export const JoinGameForm: React.FC = () => {
     <>
       <div className="flex flex-col gap">
         <label className="text-gray-900 text-[16px] font-bold text-left" >
-                  Game ID:
+            Game ID:
         </label>
         <input maxLength={8} name="gameId" disabled={session.game === undefined} type="text" className="bg-white outline-none rounded-md p-2 text-gray-900 text-[16px] font-semibold disabled:opacity-60 disabled:cursor-not-allowed border-b-4 border-gray-400" placeholder="Enter your nickname"></input>
       </div>

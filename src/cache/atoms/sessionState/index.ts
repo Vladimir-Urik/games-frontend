@@ -8,5 +8,6 @@ export const sessionStateAtom = atom<Session>({
     screen: 'SELECT_GAME',
     game: undefined,
     party: undefined,
+    loading: false,
   },
 });
