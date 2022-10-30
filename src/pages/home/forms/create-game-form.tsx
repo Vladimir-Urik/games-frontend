@@ -14,7 +14,7 @@ export const CreateGameForm: React.FC = () => {
     <>
       <div className="flex flex-col gap-1 bg-white p-2 rounded">
         <p className="text-red-600 text-[48px] text-center font-mono" >
-            05462525
+          {session.party.code}
         </p>
 
         <p className="text-gray-900 text-[12px] font-bold text-center" >
@@ -26,6 +26,7 @@ export const CreateGameForm: React.FC = () => {
         setSession({
           ...session,
           screen: 'SELECT_NEXT_MOVE',
+          party: undefined,
         });
       }}>
           Cancel

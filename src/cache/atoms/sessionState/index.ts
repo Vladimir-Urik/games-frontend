@@ -7,5 +7,6 @@ export const sessionStateAtom = atom<Session>({
     nickname: '',
     screen: 'SELECT_GAME',
     game: undefined,
+    party: undefined,
   },
 });
