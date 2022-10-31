@@ -40,4 +40,5 @@ export async function createRequest<T>(cfg: AxiosRequestConfig) {
   return res.data as T;
 }
 
-export {getGames} from './games';
+export * from './games';
+export * from './parties';

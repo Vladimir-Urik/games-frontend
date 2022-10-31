@@ -11,3 +11,10 @@ export async function createParty(nickname: string, gameType: string): Promise<P
     },
   });
 }
+
+export async function getParty(code: string): Promise<Party> {
+  return createRequest<Party>({
+    url: `parties/${code}`,
+    method: 'GET',
+  });
+}

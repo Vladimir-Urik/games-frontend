@@ -67,6 +67,7 @@ export const CreateGameForm: React.FC = () => {
             ...prev,
             screen: 'SELECT_NEXT_MOVE',
             party: undefined,
+            loading: false,
           };
         });
       }}>
