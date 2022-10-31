@@ -27,7 +27,7 @@ export const CreateGameForm: React.FC = () => {
   return (
     <>
       <SockJsClient
-        url={process.env.REACT_APP_BACKEND_URL +'ws'}
+        url={process.env.REACT_APP_BACKEND_URL +'websocket'}
         topics={['/game/'+ session.party.code]}
         onMessage={onMessage}
         autoReconnect={true}
