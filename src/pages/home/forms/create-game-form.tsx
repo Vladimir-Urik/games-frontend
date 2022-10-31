@@ -1,27 +1,29 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useRecoilState} from 'recoil';
 import {sessionStateAtom} from '../../../cache';
 import {Button} from '../../../components';
 import SockJsClient from 'react-stomp';
+import {PartyMessage} from '../../../interfaces';
 
 export const CreateGameForm: React.FC = () => {
   const [session, setSession] = useRecoilState(sessionStateAtom);
-
-  useEffect(() => {
-    if (session.screen !== 'CREATE_GAME') return;
-
-    setSession({
-      ...session,
-      loading: true,
-    });
-  }, [session.screen]);
 
   if (session.screen !== 'CREATE_GAME') {
     return <></>;
   }
 
-  const onMessage = (message: string) => {
-    console.log(message);
+  const onMessage = (message: PartyMessage) => {
+    switch (message.type) {
+      case 'CLOSE':
+        setSession((prev) => {
+          return {
+            ...prev,
+            screen: 'SELECT_NEXT_MOVE',
+            party: undefined,
+            error: 'Your party has been closed. Reason: ' + message.payload.reason,
+          };
+        });
+    }
   };
 
   return (
@@ -32,15 +34,19 @@ export const CreateGameForm: React.FC = () => {
         onMessage={onMessage}
         autoReconnect={true}
         onConnect={() => {
-          setSession({
-            ...session,
-            loading: false,
+          setSession((prev) => {
+            return {
+              ...prev,
+              loading: false,
+            };
           });
         }}
         onDisconnect={() => {
-          setSession({
-            ...session,
-            loading: true,
+          setSession((prev) => {
+            return {
+              ...prev,
+              loading: true,
+            };
           });
         }}
         debug={false}

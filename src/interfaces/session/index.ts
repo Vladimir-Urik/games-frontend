@@ -7,4 +7,5 @@ export interface Session {
     game: Game | undefined;
     party: Party | undefined;
     loading: boolean;
+    error: string | undefined;
 }

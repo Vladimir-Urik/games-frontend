@@ -9,5 +9,6 @@ export const sessionStateAtom = atom<Session>({
     game: undefined,
     party: undefined,
     loading: false,
+    error: undefined,
   },
 });
