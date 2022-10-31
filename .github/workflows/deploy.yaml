@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Deploy with gh-pages
         run: |
-          git clone https://github.com/Vladimir-Urik/games-frontend.git
+          git clone https://git:${GITHUB_TOKEN}@github.com/Vladimir-Urik/games-frontend.git
           cd games-frontend
           yarn
           yarn deploy -- -u "github-actions-bot <support+actions@github.com>"
