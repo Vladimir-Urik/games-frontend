@@ -2,6 +2,7 @@
   "name": "games",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vladimir-urik.github.io/games-frontend/",
   "dependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^12.20.10",
