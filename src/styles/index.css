@@ -9,6 +9,7 @@
     border-bottom-color: transparent;
     border-radius: 50%;
     box-sizing: border-box;
+    display: block;
     animation: rotation 1s linear infinite;
 }
 

@@ -29,7 +29,6 @@ export const SelectNextMoveForm: React.FC = () => {
             ...session,
             screen: 'CREATE_GAME',
             party: party,
-            loading: false,
           });
         });
       }}>Create a game</Button>
