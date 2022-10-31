@@ -21,9 +21,11 @@ export const SessionErrorCatcher: React.FC = () => {
       icon: 'error',
       confirmButtonText: 'Ok',
     }).then(() => {
-      setSession({
-        ...session,
-        error: undefined,
+      setSession((prev) => {
+        return {
+          ...prev,
+          error: undefined,
+        };
       });
     });
   }, [session.error]);

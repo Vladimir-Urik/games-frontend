@@ -14,31 +14,39 @@ export const SelectNextMoveForm: React.FC = () => {
   return (
     <>
       <Button variant={'primary'} onClick={() => {
-        setSession({
-          ...session,
-          screen: 'JOIN_GAME',
+        setSession((prev) => {
+          return {
+            ...prev,
+            screen: 'JOIN_GAME',
+          };
         });
       }}>Join a game</Button>
       <Button variant={'primary'} onClick={async () => {
-        setSession({
-          ...session,
-          loading: true,
+        setSession((prev) => {
+          return {
+            ...prev,
+            loading: true,
+          };
         });
         createParty(session.nickname, session.game.id).then((party) => {
-          setSession({
-            ...session,
-            screen: 'CREATE_GAME',
-            party: party,
+          setSession((prev) => {
+            return {
+              ...prev,
+              screen: 'CREATE_GAME',
+              party: party,
+            };
           });
         });
       }}>Create a game</Button>
       <Button variant={'danger'} className="mt-4" onClick={() => {
-        setSession({
-          ...session,
-          nickname: '',
-          screen: 'SELECT_GAME',
-          game: undefined,
-          party: undefined,
+        setSession((prev) => {
+          return {
+            ...prev,
+            nickname: '',
+            screen: 'SELECT_GAME',
+            game: undefined,
+            party: undefined,
+          };
         });
       }}>
           Exit

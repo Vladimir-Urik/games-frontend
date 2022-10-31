@@ -21,9 +21,11 @@ export const JoinGameForm: React.FC = () => {
 
       <Button variant={'primary'}>Join</Button>
       <Button variant={'info'} className="mt-4" onClick={() => {
-        setSession({
-          ...session,
-          screen: 'SELECT_NEXT_MOVE',
+        setSession((prev) => {
+          return {
+            ...prev,
+            screen: 'SELECT_NEXT_MOVE',
+          };
         });
       }}>
           Back

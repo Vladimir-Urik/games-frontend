@@ -62,10 +62,12 @@ export const CreateGameForm: React.FC = () => {
       </div>
 
       <Button variant={'danger'} className="mt-8" onClick={() => {
-        setSession({
-          ...session,
-          screen: 'SELECT_NEXT_MOVE',
-          party: undefined,
+        setSession((prev) => {
+          return {
+            ...prev,
+            screen: 'SELECT_NEXT_MOVE',
+            party: undefined,
+          };
         });
       }}>
           Cancel

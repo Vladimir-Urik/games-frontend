@@ -28,10 +28,12 @@ export const SelectGameForm: React.FC = () => {
     }
 
     setNicknameError(undefined);
-    setSession({
-      ...session,
-      nickname: nick,
-      screen: 'SELECT_NEXT_MOVE',
+    setSession((prev) => {
+      return {
+        ...prev,
+        nickname: nick,
+        screen: 'SELECT_NEXT_MOVE',
+      };
     });
   };
 
@@ -44,9 +46,11 @@ export const SelectGameForm: React.FC = () => {
       <div className="flex gap-4 justify-center">
         {data?.map((game: Game) => (
           <GameCard game={game} key={game.displayName} active={session.game != undefined && session.game.displayName == game.displayName} onClick={() => {
-            setSession({
-              ...session,
-              game: game,
+            setSession((prev) => {
+              return {
+                ...prev,
+                game: game,
+              };
             });
           }} />
         ))}
