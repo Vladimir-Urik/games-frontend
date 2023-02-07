@@ -10,7 +10,7 @@
     "@types/react-dom": "^18.0.8",
     "@types/recoil": "^0.0.9",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
+    "@typescript-eslint/parser": "^5.51.0",
     "axios": "^0.21.1",
     "eslint": ">=5.16.0",
     "gh-pages": "^4.0.0",
